@@ -13,6 +13,7 @@ import re
 from typing import (
     Pattern,
     Sequence,
+    Union,
 )
 
 from pandas._typing import FilePathOrBuffer
@@ -943,7 +944,7 @@ def read_html(
     index_col: int | Sequence[int] | None = None,
     skiprows: int | Sequence[int] | slice | None = None,
     attrs: dict[str, str] | None = None,
-    parse_dates: bool = False,
+    parse_dates: Union[bool, Sequence[Union[int, str, Sequence[Union[int, str]]]], Dict[str, Sequence[Union[int, str]]]] = False,
     thousands: str | None = ",",
     encoding: str | None = None,
     decimal: str = ".",
